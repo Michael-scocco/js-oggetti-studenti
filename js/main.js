@@ -70,7 +70,7 @@ var listStudent = [
 console.log(listStudent);
 // Ciclare su tutti gli studenti
 
-var proprietyEL_2 = document.querySelector('propriety-list');
+var proprietyEL_2 = document.getElementById('propriety-list');
 
 for (var i = 0; i < listStudent.length; i++) {
     var studente = listStudent[i];
@@ -81,6 +81,10 @@ for (var i = 0; i < listStudent.length; i++) {
     for (var key in studente) {
 
         console.log(studente['nome'], studente['cognome']);
+
+        proprietyEL_2.insertAdjacentHTML('beforeend', `
+        <li> ${studente['nome']}: ${studente['cognome']}
+        `)
     }
 
 }
