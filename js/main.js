@@ -37,39 +37,57 @@ for (var key in student) {
 // Creare un array di oggetti di studenti.
 var listStudent = [
     {
-        nome : 'Michael',
-        cognome : 'Scocco',
-        età : 34
+        name : 'Michael',
+        lastName : 'Scocco',
+        age : 34
     },
     {
-        nome : 'Andrei',
-        cognome : 'Burbilia',
-        età : 26
+        name : 'Andrei',
+        lastName : 'Burbilia',
+        age : 26
     },
     {
-        nome : 'Diego',
-        cognome : 'Gastaldi',
-        età : 28
+        name : 'Diego',
+        lastName : 'Gastaldi',
+        age : 28
     },
     {
-        nome : 'Vito',
-        cognome : 'Battaglia',
-        età : 20
+        name : 'Vito',
+        lastName : 'Battaglia',
+        age : 20
     },
     {
-        nome : 'Giuseppe',
-        cognome : 'Bumbello',
-        età : 50
+        name : 'Giuseppe',
+        lastName : 'Bumbello',
+        age : 50
     },
     {
-        nome : 'Davide',
-        cognome : 'Dalle Carbonare',
-        età : 29
+        name : 'Davide',
+        lastName : 'Dalle Carbonare',
+        age : 29
     },
 ];
 console.log(listStudent);
-// Ciclare su tutti gli studenti
 
+
+// Dare la possibilità all’utente, attraverso 3 prompt(), di aggiungere un nuovo
+// oggetto studente inserendo nell’ordine: nome, cognome e età.
+var nameStudent = prompt('inserisci nome');
+var lastNameStudent = prompt('inserisci cognome');
+var ageStudent = Number(prompt('inserisci nome'));
+
+
+var newStudent = {
+    name : nameStudent,
+    lastName : lastNameStudent,
+    age : ageStudent
+};
+
+listStudent.push(newStudent);
+console.log(listStudent);
+
+
+// Ciclare su tutti gli studenti
 var proprietyEL_2 = document.getElementById('propriety-list');
 
 for (var i = 0; i < listStudent.length; i++) {
@@ -77,14 +95,11 @@ for (var i = 0; i < listStudent.length; i++) {
     // console.log(studente);
 
     //stampare per ognuno di essi, nome e cognome.
-
-    for (var key in studente) {
-
-        console.log(studente['nome'], studente['cognome']);
-
+    // per fare questo non uso il for in, ma il for normale
+    // perchè voglio stampare solo quello ke voglio
+        console.log(studente['name'], studente['lastName']);
         proprietyEL_2.insertAdjacentHTML('beforeend', `
-        <li> ${studente['nome']}: ${studente['cognome']}
+        <li> ${studente['name']}: ${studente['lastName']}
         `)
-    }
 
 }
